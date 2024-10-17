@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #D4A373;
+}
+
+body {
+  background-color: #CCD5AE;
+  user-select: none;
+}
+
+.iconContainer {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+}
+
+#navBar {
+  height: 30px;
+  width: 100%;
+  font-size: 18px;
+  background-color: #FAEDCD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#searchBox {
+  position: absolute;
+  top: 4em;
+  right: 10%;
+  left: 10%;
+  display: flex;
+  align-items: center;
+  height: 30px;
+  width: 80%;
+  background-color: #FAEDCD;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#searchInput {
+  position: relative;
+  left: 0em;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 20px;
+  width: 80%;
+  padding-left: 2px;
+}
+
+#searchInput::placeholder {
+  color: #D4A373;
+}
+
+#searchIconBox {
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: .5em;
+  border: none;
+  border-left: 1px solid black;
+}
+
+#searchIcon {
+  background-color: transparent;
+  font-size: 28px;
+  border: none;
+  padding-left: 3px;
+  padding-top: 2px;
+}
+
+#optionBox {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  top: 150px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#HCIconBox {
+  height: 100%;
+  width: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+#eyeIcon {
+  font-size: 25px;
+  color: black;
+}
+
+.optionMenuDropDownSelectorBox {
+  height: 30px;
+  width: 100px;
+}
+
+.optionMenuDropDownSelector {
+  background-color: #FAEDCD;
+  border: 1px solid black;
+  outline: none;
+  height: 100%;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 20px;
+}
+
+#readingAreaBox {
+  position: absolute;
+  top: 200px;
+  left: 10%;
+  right: 10%;
+  min-height: 60px;
+  max-height: 250px;
+  height: auto;
+  width: 80%;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #e9e2b0;
+}
+
+#readingArea {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  overflow: auto;
+  height: auto;
+  min-height: 20px;
+  max-height: 210px;
+  width: 100%;
+  margin-bottom: 42px;
+  padding: 2px;
+  font-size: 16px;
+  user-select: text;
+}
+
+#referencesBox {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+}
+
+.references {
+  width: 50%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid black;
+}
+
+#referenceWithSurah {
+  border-right: 1px solid black;
+}
+
+#verseCollectionNavigation {
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+  font-size: 16px;
+  height: 16px;
+  width: 16px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#viewAndGenerateOptionDiv {
+  position: relative;
+  top: 500px;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.nextAndPreviousIconBox {
+  height: 30px;
+  width: 30px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#generateOrSearchButtonBox {
+  height: 30px;
+  width: 70%;
+}
+
+#generateOrSearchBtn {
+  height: 30px;
+  width: 100%;
+  background-color: #FAEDCD;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+#generateOrSearchBtn:hover {
+  height: 28px;
+  width: 98%;
+}
+
+.rightsBar {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  position: absolute;
+  top: 600px;
+  left: 0;
+  font-size: 14px;
+  border-top: 1px solid #ccc;
+}
+
+.rightsBar a {
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+.rightsBar a:hover {
+  text-decoration: underline;
+}

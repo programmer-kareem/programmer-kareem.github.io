@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="RQV.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>Qur'an Verse</title>
+</head>
+<body>
+  <div id="navBar" class="elements">
+    Qur'an Verse - search or print a random one.
+  </div>
+  <div id="searchBox" class="elements">
+    <input placeholder="Search any verse..."type="number" id="searchInput" class="elements">
+    <abbr title="search">
+      <div id="searchIconBox" class="elements iconContainer">
+        <i id="searchIcon"class="fa fa-search"></i>
+      </abbr>
+    </div>
+  </div>
+
+
+
+  <div id="optionBox" class="elements">
+    <div id="fontSizeSelectorBox" class="elements optionMenuDropDownSelectorBox">
+      <select name="" id="FontSizeSelector" class="elements  optionMenuDropDownSelector">
+        <option disabled value="">
+          Select Font size
+        </option>
+        <option value="12px">
+          12px
+        </option>
+        <option value="14px">
+          14px
+        </option>
+        <option selected value="16px">
+          16px
+        </option>
+        <option value="18px">
+          18px
+        </option>
+        <option value="20px">
+          20px
+        </option>
+      </select>
+    </div>
+
+    <div class="elements iconContainer" id="HCIconBox">
+      <i id="eyeIcon" class="fa fa-eye"></i>
+    </div>
+    <div id="LanguagSelectorBox" class="elements optionMenuDropDownSelectorBox">
+      <select name="" id="languageSelector" class="elements optionMenuDropDownSelector">
+        <option disabled value="">
+          Select Language
+        </option>
+        <option value="ar">
+          Arabic
+        </option>
+        <option selected value="en.asad">
+          English
+        </option>
+        <option value="ur.jalandhry">
+          Urdu
+        </option>
+      </select>
+    </div>
+  </div>
+
+
+
+
+  <div id="readingAreaBox" class="elements HCE toChangeBorderColor">
+
+    <div id="readingArea" class="elements HCE">
+      <p id="verseParagraph" class="readingAreaParagraph">
+to read a random Ayah, click on the generate button, or to search a Ayah,
+write Ayah and Surah number in this format "Surah Number.Ayah number" or to search verse from only its number, write like this "Ayah number".
+for example: (3:185) 
+or,
+(478).
+      </p>
+    </div>
+
+
+
+    <div id="referencesBox" class="HCE elements">
+      <div id="referenceWithSurah" class="elements HCE references">
+        <p id="referenceOnlyAyah" class="HCE elements readingAreaParagraph">
+          0
+        </p>
+        <p id="referencePara" class="HCE elements readingAreaParagraph">
+          Ayah
+        </p>
+      </div>
+
+      <div id="ayahReference" class="elements HCE references">
+
+        <p id="referenceSurahAndAyah" class="HCE elements readingAreaParagraph">
+          0:0
+        </p>
+        <p id="ayahReferencePara" class="HCE elements readingAreaParagraph">
+          Surah:Ayah
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="verseCollectionNavigation" class="elements">0</div>
+  <div id="viewAndGenerateOptionDiv" class="elements">
+    <div id="previousIconBox" class="elements
+      iconContainer nextAndPreviousIconBox">
+      <i class="fa fa-rotate-left nextAndPreviousIcon"></i>
+    </div>
+    <div id="generateOrSearchButtonBox" class="elements">
+      <button id="generateOrSearchBtn" class="elements">
+        find random verse...
+      </button>
+    </div>
+    <div id="nextIconBox" class="elements iconContainer nextAndPreviousIconBox">
+      <i class="fa fa-rotate-right nextAndPreviousIcon"></i>
+    </div>
+  </div>
+<div class="rightsBar">
+  <p>©2024 Common Calculator. All rights reserved.</p>
+  <p>
+    For business inquiries: 
+    <a href="mailto: business.kareem@gmail.com" target="_blank">Mail us</a> | 
+    <a href="mailto:kareem.the.programmer@gmail.com" target="_blank">Report a bug</a>
+  </p>
+</div>
+  <script src="RQV.js"></script>
+</body>
+</html>
