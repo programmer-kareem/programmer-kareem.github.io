@@ -14,7 +14,7 @@ let contrastBtnIcon = document.querySelector("#eyeIcon");
 let fontSizeDropDown = document.querySelector("#FontSizeSelector");
 let languageDropDown = document.querySelector("#languageSelector");
 let verseNumberDisplayer = document.querySelector("#verseCollectionNavigation");
-
+alert("hello")
 let verseCollection = [];
 let currentVerseIndex = 0;
 let previousVerseIndex;
