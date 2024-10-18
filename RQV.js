@@ -15,6 +15,7 @@ let fontSizeDropDown = document.querySelector("#FontSizeSelector");
 let languageDropDown = document.querySelector("#languageSelector");
 let verseNumberDisplayer = document.querySelector("#verseCollectionNavigation");
 alert("hello")
+prompt("hello")
 let verseCollection = [];
 let currentVerseIndex = 0;
 let previousVerseIndex;
