@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
   <link rel="stylesheet" href="RQV.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <title>Qur'an Verse</title>
 </head>
+
 <body>
   <div id="navBar" class="elements">
-    Qur'an Verse - search or print a random one.
+    Qur'an Verse - search or print a
+    random one.
+  </div>
+
+
+
+  <div class="elements adBoxContainer"
+    id="firstAdBoxContainer">
+    <div class="elements adBox"
+      id="firstAdBox">
+      
+      ads coming soon!
+    </div>
+
   </div>
   <div id="searchBox" class="elements">
-    <input placeholder="Search any verse..."type="number" id="searchInput" class="elements">
+    <input
+      placeholder="Search any verse..."
+      type="number" id="searchInput"
+      class="elements">
     <abbr title="search">
-      <div id="searchIconBox" class="elements iconContainer">
-        <i id="searchIcon"class="fa fa-search"></i>
-      </abbr>
-    </div>
+      <div id="searchIconBox"
+        class="elements iconContainer">
+        <i id="searchIcon"
+          class="fa fa-search">
+
+        </i>
+      </div>
+    </abbr>
   </div>
 
 
 
   <div id="optionBox" class="elements">
-    <div id="fontSizeSelectorBox" class="elements optionMenuDropDownSelectorBox">
-      <select name="" id="FontSizeSelector" class="elements  optionMenuDropDownSelector">
+    <div id="fontSizeSelectorBox"
+      class="elements optionMenuDropDownSelectorBox">
+      <select name=""
+        id="FontSizeSelector"
+        class="elements  optionMenuDropDownSelector">
         <option disabled value="">
           Select Font size
         </option>
@@ -47,18 +75,24 @@
       </select>
     </div>
 
-    <div class="elements iconContainer" id="HCIconBox">
-      <i id="eyeIcon" class="fa fa-eye"></i>
+    <div class="elements iconContainer"
+      id="HCIconBox">
+      <i id="eyeIcon"
+        class="fa fa-eye"></i>
     </div>
-    <div id="LanguagSelectorBox" class="elements optionMenuDropDownSelectorBox">
-      <select name="" id="languageSelector" class="elements optionMenuDropDownSelector">
+    <div id="LanguagSelectorBox"
+      class="elements optionMenuDropDownSelectorBox">
+      <select name=""
+        id="languageSelector"
+        class="elements optionMenuDropDownSelector">
         <option disabled value="">
           Select Language
         </option>
         <option value="ar">
           Arabic
         </option>
-        <option selected value="en.asad">
+        <option selected
+          value="en.asad">
           English
         </option>
         <option value="ur.jalandhry">
@@ -71,64 +105,193 @@
 
 
 
-  <div id="readingAreaBox" class="elements HCE toChangeBorderColor">
+  <div id="readingAreaBox"
+    class="elements HCE toChangeBorderColor">
 
-    <div id="readingArea" class="elements HCE">
-      <p id="verseParagraph" class="readingAreaParagraph">
-to read a random Ayah, click on the generate button, or to search a Ayah,
-write Ayah and Surah number in this format "Surah Number.Ayah number" or to search verse from only its number, write like this "Ayah number".
-for example: (3:185) 
-or,
-(478).
+    <div id="readingArea"
+      class="elements HCE">
+      <p id="verseParagraph"
+        class="readingAreaParagraph">
+        to read a random Ayah, click on
+        the generate button, or to
+        search a Ayah,
+        write Ayah and Surah number in
+        this format "Surah Number.Ayah
+        number" or to search verse from
+        only its number, write like this
+        "Ayah number".
+        for example: (3:185)
+        or,
+        (478).
       </p>
     </div>
 
 
 
-    <div id="referencesBox" class="HCE elements">
-      <div id="referenceWithSurah" class="elements HCE references">
-        <p id="referenceOnlyAyah" class="HCE elements readingAreaParagraph">
+    <div id="referencesBox"
+      class="HCE elements">
+      <div id="referenceWithSurah"
+        class="elements HCE references">
+        <p id="referenceOnlyAyah"
+          class="HCE elements readingAreaParagraph">
           0
         </p>
-        <p id="referencePara" class="HCE elements readingAreaParagraph">
+        <p id="referencePara"
+          class="HCE elements readingAreaParagraph">
           Ayah
         </p>
       </div>
 
-      <div id="ayahReference" class="elements HCE references">
+      <div id="ayahReference"
+        class="elements HCE references">
 
-        <p id="referenceSurahAndAyah" class="HCE elements readingAreaParagraph">
+        <p id="referenceSurahAndAyah"
+          class="HCE elements readingAreaParagraph">
           0:0
         </p>
-        <p id="ayahReferencePara" class="HCE elements readingAreaParagraph">
+        <p id="ayahReferencePara"
+          class="HCE elements readingAreaParagraph">
           Surah:Ayah
         </p>
       </div>
     </div>
   </div>
-  <div id="verseCollectionNavigation" class="elements">0</div>
-  <div id="viewAndGenerateOptionDiv" class="elements">
-    <div id="previousIconBox" class="elements
+  <div id="verseCollectionNavigation"
+    class="elements">0</div>
+  <div id="viewAndGenerateOptionDiv"
+    class="elements">
+    <div id="previousIconBox"
+      class="elements
       iconContainer nextAndPreviousIconBox">
-      <i class="fa fa-rotate-left nextAndPreviousIcon"></i>
+      <i
+        class="fa fa-rotate-left nextAndPreviousIcon"></i>
     </div>
-    <div id="generateOrSearchButtonBox" class="elements">
-      <button id="generateOrSearchBtn" class="elements">
+    <div id="generateOrSearchButtonBox"
+      class="elements">
+      <button id="generateOrSearchBtn"
+        class="elements">
         find random verse...
       </button>
     </div>
-    <div id="nextIconBox" class="elements iconContainer nextAndPreviousIconBox">
-      <i class="fa fa-rotate-right nextAndPreviousIcon"></i>
+    <div id="nextIconBox"
+      class="elements iconContainer nextAndPreviousIconBox">
+      <i
+        class="fa fa-rotate-right nextAndPreviousIcon"></i>
     </div>
   </div>
-<div class="rightsBar">
-  <p>©2024 Common Calculator. All rights reserved.</p>
-  <p>
-    For business inquiries: 
-    <a href="mailto: business.kareem@gmail.com" target="_blank">Mail us</a> | 
-    <a href="mailto:kareem.the.programmer@gmail.com" target="_blank">Report a bug</a>
-  </p>
-</div>
+
+
+  <div class="elements adBoxContainer"
+    id="secondAdBoxContainer">
+    <div class="elements adBox"
+      id="secondAdBox">
+      ads coming soon!
+    </div>
+  </div>
+
+
+
+  <div class="rightsBar">
+    <p>©2024 Qur'an Verse. All rights
+      reserved.</p>
+
+    <!-- Business Inquiries -->
+    <p>For business inquiries:
+      <a href="mailto:business.kareem@gmail.com"
+        target="_blank"
+        class="mailLink">Mail us</a>
+    </p>
+
+    <!-- Report Bug -->
+    <p>Report a bug:
+      <a href="mailto:kareem.the.programmer@gmail.com"
+        target="_blank"
+        class="mailLink">Contact
+        Support</a>
+    </p>
+    <div class="elements"
+      id="rightsBarInformation">
+
+
+      <!-- About Me Section -->
+
+      <details>
+        <summary>About Me</summary>
+        <p>Assalamualaikum,
+          I am Syed Ayatullah Kareem, a
+          secondary school student. I
+          built this website out of
+          personal interest and as a
+          project to apply what I have
+          learned.
+
+          <br id="smh">Social media
+          handle:
+          <br>Instagram: <a
+            href="https://www.instagram.com/programmer_kareem/"
+            class="mailLink">programmer_kareem</a>
+          <br>Whatsapp Channel: <a
+            href="https://whatsapp.com/channel/0029Vaboa9ELo4hfx7Da0m1A"
+            class="mailLink">Programmer_Kareem
+            Updates</a>
+        </p>
+      </details>
+      <!-- Credits Section -->
+      <details>
+        <summary>Credits</summary>
+        <p>Credits:
+          <br>Icons by: <a
+            href="https://fontawesome.com"
+            class="mailLink"
+            target="_blank">Font
+            Awesome</a>
+          <br>Qur'an verses provided
+          by: <a
+            href="https://alquran.cloud/api"
+            class="mailLink"
+            target="_blank">Al-Qur'an
+            API</a>
+        </p>
+      </details>
+      <!-- Privacy Policy Section -->
+
+      <details>
+        <summary>Privacy Policy
+        </summary>
+        <p>This site displays
+          advertisements and may
+          collect basic analytics to
+          help improve user
+          experience.
+          However, we do not collect
+          any personal data from our
+          users, and your privacy is
+          respected at all times.
+        </p>
+      </details>
+
+      <!-- Terms of Service Section -->
+
+      <details>
+        <summary>Terms of Service
+        </summary>
+        <p>
+          By using this website, you
+          agree to use it in a
+          respectful and lawful
+          manner.
+          The content provided is
+          for
+          informational purposes and
+          should not be misused.
+          We reserve the right to
+          modify the site and its
+          services at any time
+          without
+          prior notice.</p>
+      </details>
+    </div>
+  </div>
   <script src="RQV.js"></script>
 </body>
 </html>
