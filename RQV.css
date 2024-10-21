@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   color: #D4A373;
+  font-family: 'Montserrat',sans-serif;
 }
 
 body {
@@ -39,7 +40,7 @@ body {
 }
 
 #navBar {
-  height: 30px;
+  height: 40px;
   width: 100%;
   font-size: 18px;
   background-color: #FAEDCD;
@@ -273,7 +274,9 @@ summary {
   margin-bottom: 10px;
 }
 
-#smh {}
+#smh {
+  margin-top: 10px;
+}
 
 .rightsBar a {
   text-decoration: none;
