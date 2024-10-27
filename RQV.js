@@ -67,7 +67,7 @@ let findRandomVerse = async () => {
 }
 //gets the searched term and change it to a format, creates a url and send it to fetch.
 findSearchedVerse = async () => {
-searchValue = searchInput.value
+searchValue = searchInputBox.value
     .trim();
     let finalSearchValue;
   if (searchValue != "") {
@@ -255,6 +255,33 @@ function setEyeContrastMode() {
 
     isContrastModeTurnedOn = false;
 
+  }
+}
+//changes the sajdah verse color to red after contrast mode is turned off''.
+function setEyeContrastMode() {
+  if (!isContrastModeTurnedOn) {
+    // Enable contrast mode
+    readingAreaBox.style.backgroundColor = "#2F2F2F";
+    paragraphForEyeContrast.forEach((paragraph) => {
+      paragraph.style.color = "#FFFF00";
+    });
+    contrastBtnIcon.style.color = "white";
+    
+    isContrastModeTurnedOn = true;
+
+  } else {
+    readingAreaBox.style.backgroundColor = "";
+    paragraphForEyeContrast.forEach((paragraph) => {
+      paragraph.style.color = "";
+    });
+    contrastBtnIcon.style.color = "";
+    if (doCurrentVerseHaveSajdah) {
+      verseParagraph.style.color = "red";
+    } else {
+      verseParagraph.style.color = "";
+    }
+
+    isContrastModeTurnedOn = false;
   }
 }
 //font size changing function, changes font size as per user wants.
