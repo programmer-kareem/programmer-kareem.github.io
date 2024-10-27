@@ -10,7 +10,7 @@ body {
   user-select: none;
 }
 
-.mailLink {
+.link {
   font-weight: 600;
   text-decoration: underline;
 }
@@ -226,7 +226,7 @@ body {
   width: 70%;
 }
 
-#generateOrSearchBtn {
+#printBtn {
   height: 30px;
   width: 100%;
   background-color: #FAEDCD;
@@ -235,7 +235,7 @@ body {
   font-size: 16px;
 }
 
-#generateOrSearchBtn:hover {
+#printBtn:hover {
   height: 28px;
   width: 98%;
 }

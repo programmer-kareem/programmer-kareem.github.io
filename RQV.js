@@ -1,8 +1,9 @@
+//initialisation(imported) from html
 let verseParagraph = document
   .querySelector("#verseParagraph");
-let generateOrSearchBtn = document
+let printBtn = document
   .querySelector(
-  "#generateOrSearchBtn");
+  "#printBtn");
 let referenceSurahAndAyah = document
   .querySelector(
     "#referenceSurahAndAyah");
@@ -34,6 +35,7 @@ let languageDropDown = document
 let verseNumberDisplayer = document
   .querySelector(
     "#verseCollectionNavigation");
+//initialisation 
 let verseCollection = [];
 let currentVerseIndex = 0;
 let previousVerseIndex;
@@ -41,6 +43,7 @@ let searchValue;
 let languageToPrint = "en.asad";
 let isContrastModeTurnedOn = false;
 let doCurrentVerseHaveSajdah = false;
+//first verse of the Qur'an, this will be added to verse collection so that way, this will be  first verse of the collection without fetching it.
 {
   let FirstVerse = {
     text: "In the name of God, The Most Gracious, The Dispenser of Grace:",
@@ -52,8 +55,8 @@ let doCurrentVerseHaveSajdah = false;
   verseCollection.push(FirstVerse);
 }
 
-
-let printRandomVerse = async () => {
+//generates number between 1-6236 randomly and give it to fetch the ayah of that number 
+let findRandomVerse = async () => {
   let randomAyahNumber = Math.floor(
     (Math.random() * 6236) + 1);
   let URL =
@@ -62,14 +65,29 @@ let printRandomVerse = async () => {
     "loading verse..."
   fetchAndCatchError(URL);
 }
-printSearchedVerse = async (
-  finalSearchValue) => {
+//gets the searched term and change it to a format, creates a url and send it to fetch.
+findSearchedVerse = async () => {
+searchValue = searchInput.value
+    .trim();
+    let finalSearchValue;
+  if (searchValue != "") {
+    if (searchValue.includes(".")) {
+     finalSearchValue = searchValue
+        .replace(".", ":");
+  
+    }
+    else if (!searchValue.includes(".")) {
+      finalSearchValue =
+        searchValue;
+    }
+  }
   let URL =
     `https://api.alquran.cloud/v1/ayah/${finalSearchValue}/${languageToPrint}`;
   verseParagraph.innerText =
     "loading verse..."
   fetchAndCatchError(URL);
 }
+//fetches the URL and if there is an error, it catches iit and if there is not, it sends the verse to print.
 async function fetchAndCatchError(URL) {
   let statusCode;
   try {
@@ -119,7 +137,7 @@ async function fetchAndCatchError(URL) {
           "Invalid input. Use the correct format (Verse number) or (Surah number.Verse number).";
       } else if (statusCode === 404) {
         verseParagraph.innerText =
-          "Verse not found. Last Ayah number: 6236, Last Surah number: 114.";
+          "Verse not found. Last Ayah number: 6236, Last Surah number: 114. make sure it is in the correct format before searching.";
       } else if (statusCode === 429) {
         verseParagraph.innerText =
           "Too many requests. Please wait before trying again.";
@@ -130,14 +148,14 @@ async function fetchAndCatchError(URL) {
         "Server issue. Please try again later.";
     } else if (!navigator.onLine) {
       verseParagraph.innerText =
-        "You are offline. Check your internet connection.";
+        "You are offline. Check your internet connection and try again.";
     } else {
       verseParagraph.innerText =
         "An unknown error occurred.";
     }
   }
 }
-
+//prints the verse which it got by fetching.
 function printVerse(verse) {
 
   verseParagraph.innerText =
@@ -148,33 +166,12 @@ function printVerse(verse) {
     `${verse.verseNumberInQuran}`;
   checkForSajdah(verse);
 }
-
+//changes the language to which user wants(currently, it changes the language of verse which will be fetched after changing language, it will be updated later to change all the verse in the verse collection.)
 function verseLanguage() {
   languageToPrint = languageDropDown
     .value
-
 }
-
-function searchFunction() {
-  searchValue = searchInput.value
-.trim();
-  if (searchValue != "") {
-    if (searchValue.includes(".")) {
-      let finalSearchValue = searchValue
-        .replace(".", ":");
-      printSearchedVerse(
-        finalSearchValue);
-
-    }
-    if (!searchValue.includes(".")) {
-      let finalSearchValue =
-      searchValue;
-      printSearchedVerse(
-        finalSearchValue);
-    }
-  }
-}
-
+//checks if there is any sajdah in searched or randomly found verse
 function checkForSajdah(verseToPrint) {
   if (verseToPrint.sajdah != false) {
     doCurrentVerseHaveSajdah = true;
@@ -190,7 +187,7 @@ function checkForSajdah(verseToPrint) {
     }
   }
 }
-
+//displays the previously fetched ayah of the currently displayed.
 function displayPreviousAyah() {
   if (currentVerseIndex != 0) {
     let previousVerseIndex =
@@ -209,14 +206,13 @@ function displayPreviousAyah() {
     checkForSajdah(verseToPrint);
   } else {}
 }
-
+//displays the next ayah to the ayah which is currently displayed.
 function displayNextAyah() {
   if (verseCollection.length ===
     currentVerseIndex + 1) {
     verseParagraph.innerText =
       `you have reached end.`
   } else {
-
     let nextVerseIndex =
       currentVerseIndex + 1;
     let verseToPrint = verseCollection[
@@ -233,7 +229,7 @@ function displayNextAyah() {
     checkForSajdah(verseToPrint);
   }
 }
-//contrast mode function
+//contrast mode function changes background to black and ayah to green
 function setEyeContrastMode() {
   if (!isContrastModeTurnedOn) {
     readingAreaBox.style
@@ -261,13 +257,14 @@ function setEyeContrastMode() {
 
   }
 }
-
+//font size changing function, changes font size as per user wants.
 function changeFontSize() {
   let userFontSizeChoice =
     fontSizeDropDown.value;
   readingArea.style.fontSize =
     `${userFontSizeChoice}`;
 }
+//dom manipulation
 fontSizeDropDown.onchange = () => {
   changeFontSize();
 }
@@ -275,12 +272,13 @@ contrastBtnIconBox.onclick = () => {
   setEyeContrastMode();
 }
 verseSearchButton.onclick = () => {
-  searchFunction()
+  findSearchedVerse()
 }
+//enter key
 searchInputBox.addEventListener("keyup",
   (event) => {
     if (event.keyCode === 13) {
-      searchFunction();
+      findSearchedVerse();
     }
   });
 previousIconBox.onclick = () => {
@@ -289,8 +287,8 @@ previousIconBox.onclick = () => {
 nextIconBox.onclick = () => {
   displayNextAyah();
 }
-generateOrSearchBtn.onclick = () => {
-  printRandomVerse();
+printBtn.onclick = () => {
+  findRandomVerse();
 }
 languageDropDown.onchange = () => {
   verseLanguage();
