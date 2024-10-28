@@ -54,7 +54,7 @@ let doCurrentVerseHaveSajdah = false;
   }
   verseCollection.push(FirstVerse);
 }
-
+//test
 //generates number between 1-6236 randomly and give it to fetch the ayah of that number 
 let findRandomVerse = async () => {
   let randomAyahNumber = Math.floor(
