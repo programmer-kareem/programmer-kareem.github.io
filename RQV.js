@@ -208,11 +208,8 @@ function displayPreviousAyah() {
 }
 //displays the next ayah to the ayah which is currently displayed.
 function displayNextAyah() {
-  if (verseCollection.length ===
+  if (verseCollection.length !=
     currentVerseIndex + 1) {
-    verseParagraph.innerText =
-      `you have reached end.`
-  } else {
     let nextVerseIndex =
       currentVerseIndex + 1;
     let verseToPrint = verseCollection[
