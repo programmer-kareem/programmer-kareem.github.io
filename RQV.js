@@ -262,6 +262,12 @@ function setEyeContrastMode() {
     paragraphForEyeContrast.forEach((paragraph) => {
       paragraph.style.color = "#FFFF00";
     });
+    if (doCurrentVerseHaveSajdah) {
+      verseParagraph.style.color = "red";
+    } else {
+      verseParagraph.style.color = "";
+    }
+    
     contrastBtnIcon.style.color = "white";
     
     isContrastModeTurnedOn = true;
