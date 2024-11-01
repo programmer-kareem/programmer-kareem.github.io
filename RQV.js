@@ -40,6 +40,7 @@ let verseCollection = [];
 let currentVerseIndex = 0;
 let previousVerseIndex;
 let searchValue;
+let finalSearchValue;
 let languageToPrint = "en.asad";
 let isContrastModeTurnedOn = false;
 let doCurrentVerseHaveSajdah = false;
@@ -69,7 +70,6 @@ let findRandomVerse = async () => {
 findSearchedVerse = async () => {
 searchValue = searchInputBox.value
     .trim();
-    let finalSearchValue;
   if (searchValue != "") {
     if (searchValue.includes(".")) {
      finalSearchValue = searchValue
@@ -137,7 +137,7 @@ async function fetchAndCatchError(URL) {
           "Invalid input. Use the correct format (Verse number) or (Surah number.Verse number).";
       } else if (statusCode === 404) {
         verseParagraph.innerText =
-          "Verse not found. Last Ayah number: 6236, Last Surah number: 114. make sure it is in the correct format before searching.";
+          "Verse not found. make sure you have searched between 1 to 6236 or it is in correct format. try searching '3.185'";
       } else if (statusCode === 429) {
         verseParagraph.innerText =
           "Too many requests. Please wait before trying again.";
@@ -226,34 +226,6 @@ function displayNextAyah() {
     checkForSajdah(verseToPrint);
   }
 }
-//contrast mode function changes background to black and ayah to green
-function setEyeContrastMode() {
-  if (!isContrastModeTurnedOn) {
-    readingAreaBox.style
-      .backgroundColor = "#2F2F2F";
-    paragraphForEyeContrast.forEach((
-      paragraph) => {
-      paragraph.style.color =
-        "#FFFF00";
-    })
-    contrastBtnIcon.style.color =
-      "white";
-
-    isContrastModeTurnedOn = true;
-
-  } else {
-    readingAreaBox.style
-      .backgroundColor = "";
-    paragraphForEyeContrast.forEach((
-      paragraph) => {
-      paragraph.style.color = "";
-    })
-    contrastBtnIcon.style.color = "";
-
-    isContrastModeTurnedOn = false;
-
-  }
-}
 //changes the sajdah verse color to red after contrast mode is turned off''.
 function setEyeContrastMode() {
   if (!isContrastModeTurnedOn) {
@@ -265,7 +237,7 @@ function setEyeContrastMode() {
     if (doCurrentVerseHaveSajdah) {
       verseParagraph.style.color = "red";
     } else {
-      verseParagraph.style.color = "";
+      verseParagraph.style.color = "#FFFF00";
     }
     
     contrastBtnIcon.style.color = "white";
@@ -302,7 +274,9 @@ contrastBtnIconBox.onclick = () => {
   setEyeContrastMode();
 }
 verseSearchButton.onclick = () => {
-  findSearchedVerse()
+  if (searchInputBox.value!="") {
+    findSearchedVerse()
+  }
 }
 //enter key
 searchInputBox.addEventListener("keyup",
