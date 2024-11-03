@@ -32,9 +32,7 @@ let fontSizeDropDown = document
   .querySelector("#FontSizeSelector");
 let languageDropDown = document
   .querySelector("#languageSelector");
-let verseNumberDisplayer = document
-  .querySelector(
-    "#verseCollectionNavigation");
+  
 //initialisation 
 let verseCollection = [];
 let currentVerseIndex = 0;
@@ -115,8 +113,7 @@ async function fetchAndCatchError(URL) {
     await printVerse(verse);
     verseCollection.push(verse);
     currentVerseIndex++;
-    verseNumberDisplayer.innerText =
-      currentVerseIndex;
+    
 
   } catch (error) {
     console.log(
@@ -201,8 +198,6 @@ function displayPreviousAyah() {
     referenceSurahAndAyah.innerText =
       `${verseToPrint.surahNumber}:${verseToPrint.verseNumberInSurah}`;
     currentVerseIndex--;
-    verseNumberDisplayer.innerText =
-      currentVerseIndex;
     checkForSajdah(verseToPrint);
   } else {}
 }
@@ -221,8 +216,6 @@ function displayNextAyah() {
     referenceSurahAndAyah.innerText =
       `${verseToPrint.surahNumber}:${verseToPrint.verseNumberInSurah}`;
     currentVerseIndex++;
-    verseNumberDisplayer.innerText =
-      currentVerseIndex;
     checkForSajdah(verseToPrint);
   }
 }
